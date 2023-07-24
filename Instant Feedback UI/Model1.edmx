@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FarmexpertERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PriceListDetail">
+          <Key>
+            <PropertyRef Name="PriceListDetailId" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="PriceListDetailId" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="PriceListId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="MeasuringUnitId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" />
+          <Property Name="StkMaxBasePrice" Type="money" />
+          <Property Name="ValidFrom" Type="datetime" />
+          <Property Name="ParentItemId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="LastUpdate" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="ValidTo" Type="datetime" />
+          <Property Name="Inactive" Type="tinyint" />
+          <Property Name="CurrencyId" Type="int" />
+          <Property Name="PriceWithVAT" Type="money" />
+          <Property Name="VATId" Type="int" />
+          <Property Name="VATPercent" Type="numeric" Precision="10" Scale="4" />
+          <Property Name="Delta" Type="money" />
+          <Property Name="AddPercent" Type="numeric" Precision="10" Scale="4" />
+          <Property Name="MinPrice" Type="money" />
+          <Property Name="MaxPrice" Type="money" />
+          <Property Name="MinPriceWithVAT" Type="money" />
+          <Property Name="MaxPriceWithVAT" Type="money" />
+          <Property Name="TimeStamp" Type="datetime" />
+          <Property Name="IsFocus" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FarmexpertERPModelStoreContainer">
+          <EntitySet Name="PriceListDetail" EntityType="Self.PriceListDetail" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FarmexpertERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PriceListDetail">
+          <Key>
+            <PropertyRef Name="PriceListDetailId" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="PriceListDetailId" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="PriceListId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="MeasuringUnitId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="StkMaxBasePrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ValidFrom" Type="DateTime" Precision="3" />
+          <Property Name="ParentItemId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="LastUpdate" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ValidTo" Type="DateTime" Precision="3" />
+          <Property Name="Inactive" Type="Byte" />
+          <Property Name="CurrencyId" Type="Int32" />
+          <Property Name="PriceWithVAT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VATId" Type="Int32" />
+          <Property Name="VATPercent" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="Delta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AddPercent" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="MinPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MaxPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MinPriceWithVAT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MaxPriceWithVAT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="IsFocus" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FarmexpertERPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PriceListDetails" EntityType="Self.PriceListDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FarmexpertERPModelStoreContainer" CdmEntityContainer="FarmexpertERPEntities">
+          <EntitySetMapping Name="PriceListDetails">
+            <EntityTypeMapping TypeName="FarmexpertERPModel.PriceListDetail">
+              <MappingFragment StoreEntitySet="PriceListDetail">
+                <ScalarProperty Name="PriceListDetailId" ColumnName="PriceListDetailId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="MeasuringUnitId" ColumnName="MeasuringUnitId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="StkMaxBasePrice" ColumnName="StkMaxBasePrice" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ParentItemId" ColumnName="ParentItemId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="PriceWithVAT" ColumnName="PriceWithVAT" />
+                <ScalarProperty Name="VATId" ColumnName="VATId" />
+                <ScalarProperty Name="VATPercent" ColumnName="VATPercent" />
+                <ScalarProperty Name="Delta" ColumnName="Delta" />
+                <ScalarProperty Name="AddPercent" ColumnName="AddPercent" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinPriceWithVAT" ColumnName="MinPriceWithVAT" />
+                <ScalarProperty Name="MaxPriceWithVAT" ColumnName="MaxPriceWithVAT" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="IsFocus" ColumnName="IsFocus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
